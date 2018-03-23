@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class ControllerFunc_J8 {
@@ -31,7 +32,7 @@ public class ControllerFunc_J8 {
     }
 
     public void imprimirFuncionarios() {
-        this.funcionarios.forEach(funcionario -> System.out.println(funcionario));
+        this.funcionarios.forEach(System.out::println);
     }
 
     public void aumentoSalario(int limite, double percentil) {
