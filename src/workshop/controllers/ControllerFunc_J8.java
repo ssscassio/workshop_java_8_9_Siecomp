@@ -79,10 +79,13 @@ public class ControllerFunc_J8 {
     }
 
     public void iniciarExpediente() {
+        this.funcionarios.stream().map(f -> new Thread(f::trabalhar))
+                .collect(Collectors.toCollection(() -> this.tarefas)).forEach(Thread::start);
     }
 
     public void encerrarExpediente() {
-
+        this.tarefas.forEach(Thread::interrupt);
+        this.tarefas.clear();
     }
 
     public void cortarCustos(double tetoSalarial) {
