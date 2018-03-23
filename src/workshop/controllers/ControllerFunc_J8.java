@@ -21,7 +21,7 @@ public class ControllerFunc_J8 {
     }
 
     public List<Funcionario> ordenarPorSalario() {
-        this.funcionarios.sort((f1, f2) -> Double.compare(f1.getSalario(), f2.getSalario()));
+        this.funcionarios.sort(Comparator.comparingDouble(Funcionario::getSalario));
         return this.funcionarios;
     }
 
