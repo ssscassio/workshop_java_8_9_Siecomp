@@ -73,7 +73,7 @@ public class ControllerFunc_J8 {
     }
 
     public boolean alguemFoiDemitido() {
-        this.funcionarios.stream().filter(f -> !f.estaContratado()).findAny().isPresent();
+        return this.funcionarios.stream().anyMatch(f -> !f.estaContratado());
     }
 
     public void iniciarExpediente() {
