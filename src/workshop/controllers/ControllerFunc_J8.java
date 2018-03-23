@@ -21,7 +21,8 @@ public class ControllerFunc_J8 {
     }
 
     public List<Funcionario> ordenarPorSalario() {
-        return null;
+        this.funcionarios.sort((f1, f2) -> Double.compare(f1.getSalario(), f2.getSalario()));
+        return this.funcionarios;
     }
 
     private List<Funcionario> carregarFuncionariosDoArquivo() throws IOException {
