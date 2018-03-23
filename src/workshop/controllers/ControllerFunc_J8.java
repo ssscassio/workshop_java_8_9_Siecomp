@@ -62,7 +62,8 @@ public class ControllerFunc_J8 {
     }
 
     public Double mediaSalarioDpt(String dpt) {
-        return null;
+        return this.listaParaMapa().entrySet().stream().collect(
+                Collectors.toMap(k -> k.getKey(), k -> k.getValue().mapToDouble(Funcionario::getslario).average()));
     }
 
     public Funcionario maiorSalario() {
