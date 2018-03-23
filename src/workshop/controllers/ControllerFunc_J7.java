@@ -29,12 +29,7 @@ public class ControllerFunc_J7 {
             public int compare(Funcionario t1, Funcionario t2) {
                 double salario1 = t1.getSalario();
                 double salario2 = t2.getSalario();
-                if (salario1 > salario2)
-                    return 1;
-                else if (salario1 == salario2)
-                    return 0;
-                else
-                    return -1;
+                return Double.compare(salario1, salario2);
             }
         });
         return this.funcionarios;
