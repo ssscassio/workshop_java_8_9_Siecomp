@@ -85,6 +85,10 @@ public class ControllerFunc_J8 {
 
     }
 
+    public void cortarCustos(double tetoSalarial) {
+        this.funcionarios.stream().filter(f -> f.getSlario() > tetoSalarial).forEach(Funcionario::demitir);
+    }
+
     public Map<String, List<Funcionario>> listaParaMapa() {
         return null;
     }
