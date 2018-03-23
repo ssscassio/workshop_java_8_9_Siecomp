@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ControllerFunc_J8 {
 
@@ -88,7 +89,7 @@ public class ControllerFunc_J8 {
     }
 
     public Map<String, List<Funcionario>> listaParaMapa() {
-        return null;
+        return this.funcionarios.stream().collect(Collectors.groupingBy(Funcionarios::getDepartamento));
     }
 
 }
