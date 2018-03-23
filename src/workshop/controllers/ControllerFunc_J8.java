@@ -49,11 +49,11 @@ public class ControllerFunc_J8 {
     }
 
     public double mediaSalarial() {
-        return 0;
+        return this.funcionarios.stream().mapToDouble(Funcionario::getSalario).average().orElse(0);
     }
 
     public double custoFolhaPagamento() {
-        return 0;
+        return this.funcionarios.stream().mapToDouble(Funcionario::getSalario).reduce(0, Double::sum);
     }
 
     public Map<String, Double> mediaSalarioDpt() {
@@ -73,7 +73,7 @@ public class ControllerFunc_J8 {
     }
 
     public boolean alguemFoiDemitido() {
-        return false;
+        this.funcionarios.stream().filter(f -> !f.estaContratado()).findAny().isPresent();
     }
 
     public void iniciarExpediente() {
