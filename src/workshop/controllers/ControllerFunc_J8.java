@@ -65,11 +65,13 @@ public class ControllerFunc_J8 {
     }
 
     public Funcionario maiorSalario() {
-        return null;
+        this.funcionarios.sort(Comparator.comparingDouble(Funcionario::getSalario).reverse());
+        return this.funcionarios.get(0);
     }
 
     public Funcionario menorSalario() {
-        return null;
+        this.funcionarios.sort(Comparator.comparingDouble(Funcionario::getSalario));
+        return this.funcionarios.get(0);
     }
 
     public boolean alguemFoiDemitido() {
