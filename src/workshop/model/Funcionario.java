@@ -14,7 +14,6 @@ public class Funcionario {
     private double salario;
     private boolean contratado;
 
-
     public Funcionario(String nome, String departamento, int idade, double salario) {
         this.nome = nome;
         this.departamento = departamento;
@@ -38,14 +37,14 @@ public class Funcionario {
         return salario;
     }
 
-    public void aumentarSalario(double percentil){
-        this.salario *= (1+percentil);
+    public void aumentarSalario(double percentil) {
+        this.salario *= (1 + percentil);
     }
 
     @Override
     public String toString() {
-        return String.format("Nome: %s, departamento: %s, idade: %d, salario: %.2f",
-                getNome(), getDepartamento(), getIdade(), getSalario());
+        return String.format("Nome: %s, departamento: %s, idade: %d, salario: %.2f", getNome(), getDepartamento(),
+                getIdade(), getSalario());
     }
 
     public static Funcionario extrairDeString(String stringFuncionario) {
@@ -86,7 +85,7 @@ public class Funcionario {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Funcionario){
+        if (obj instanceof Funcionario) {
             Funcionario f = (Funcionario) obj;
             return this.getNome().equals(f.getNome());
         }

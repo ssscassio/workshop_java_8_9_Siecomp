@@ -27,7 +27,6 @@ public class ControllerFunc_J7 {
         return null;
     }
 
-
     private List<Funcionario> carregarFuncionariosDoArquivo() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(ControllerFunc_J7.NOME_DO_ARQUIVO));
         Funcionario funcionario;
@@ -43,19 +42,20 @@ public class ControllerFunc_J7 {
         return funcionarios;
     }
 
-    public void imprimirFuncionarios(){
-        for(Funcionario f: this.funcionarios){
+    public void imprimirFuncionarios() {
+        for (Funcionario f : this.funcionarios) {
             System.out.println(f);
         }
     }
 
-    public void aumentoSalario(int limite, double percentil){
-        for(Funcionario f: this.funcionarios){
-            if(f.getSalario() < limite){
+    public void aumentoSalario(int limite, double percentil) {
+        for (Funcionario f : this.funcionarios) {
+            if (f.getSalario() < limite) {
                 f.aumentarSalario(percentil);
             }
         }
     }
+
     public List<Funcionario> filtroDeIdade(int idade) {
         //Mostra o nome dos funcionários que possuem mais de X anos
 
@@ -124,7 +124,6 @@ public class ControllerFunc_J7 {
         return media;
     }
 
-
     public Funcionario maiorSalario() {
         Funcionario funcionario = this.funcionarios.get(0);
         for (Funcionario f : this.funcionarios) {
@@ -155,7 +154,7 @@ public class ControllerFunc_J7 {
     }
 
     public void iniciarExpediente() {
-        for(Funcionario f: this.funcionarios){
+        for (Funcionario f : this.funcionarios) {
             Runnable tarefa = new Runnable() {
                 @Override
                 public void run() {
